@@ -1,0 +1,104 @@
+<html>
+<head>
+    <title>Contact Us</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+ <style>
+    html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	
+	
+	vertical-align: baseline;
+}
+
+    
+  </style>   
+</head>
+<body>
+    <div style="background-color:#0071bc;">
+    <h1 style="text-align: center; color: white; padding: 20px; margin-bottom: 50px;">Contact US</h1>
+    </div>
+    <?php if(!empty($emailSent)): ?>
+        <div class="col-md-6 col-md-offset-3">
+            <div class="alert alert-success text-center">Message Sent</div>
+        </div>
+    <?php else: ?>
+        <?php if(!empty($hasError)): ?>
+        <div class="col-md-5 col-md-offset-4">
+            <div class="alert alert-danger text-center">Houve um erro no envio, tente novamente mais tarde.</div>
+        </div>
+        <?php endif; ?>
+
+    <div class="col-md-6 col-md-offset-3">
+        <form action="<?php echo $_SERVER['REQUEST_URI']; ?>" id="contact-form" class="form-horizontal" role="form" method="post">
+            <div class="form-group">
+                <label for="name" class="col-lg-2 control-label">Name</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" id="form-name" name="form-name" placeholder="Name" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email" class="col-lg-2 control-label">Email</label>
+                <div class="col-lg-10">
+                    <input type="email" class="form-control" id="form-email" name="form-email" placeholder="Email" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="tel" class="col-lg-2 control-label">Phone</label>
+                <div class="col-lg-10">
+                    <input type="tel" class="form-control" id="form-tel" name="form-tel" placeholder="Phone Number">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="assunto" class="col-lg-2 control-label">Subject</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" id="form-assunto" name="form-assunto" placeholder="Subject" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="mensagem" class="col-lg-2 control-label">Message</label>
+                <div class="col-lg-10">
+                    <textarea class="form-control" rows="3" id="form-mensagem" name="form-mensagem" placeholder="Message" required></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-offset-2 col-lg-10">
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    
+    <div style="float: left; padding: 20px; margin-top: 90px;">
+   <a href="index.html" style="text-decoration: none;"><div style=" float: left; background-color: #ed1c24; color: white; width: 300px; height: 100px; text-align: center; margin-right: 150px; margin-left: 150px;"><h3 style=" font-size: 35px;">Home Page</h3></div></a>
+    <a href="store.html" style="text-decoration: none;"><div style=" float: left; background-color: #ed1c24; color: white; width: 300px; height: 100px; text-align: center; margin-right: 150px;"><h3 style=" font-size: 35px;">Chapter Store</h3></div></a>
+    <a href="contact-form.html" style="text-decoration: none;"><div style=" float: left; background-color: #ed1c24; color: white; width: 300px; height: 100px; text-align: center;"><h3 style=" font-size: 35px;">Send a Messgae</h3></div></a>
+    
+</div>
+    <?php endif; ?>
+
+    <!--[if lt IE 9]>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <![endif]-->
+    <!--[if gte IE 9]><!-->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!--<![endif]-->
+    <script type="text/javascript" src="assets/js/contact-form.js"></script>
+</body>
+</html>
